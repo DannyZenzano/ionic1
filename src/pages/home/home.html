@@ -1,14 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Coopropietarios
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button ion-button full (click)="gototablero()">COMUNICADOS</button>
+  <button ion-button full (click)="gotoestadocuentas()">ESTADO DE CUENTA</button>
+  <button ion-button full (click)="gotomensajes()">MENSAJES</button>
+  <button ion-button full (click)="gotopanico()">BOTON DE PANICO</button> 
 </ion-content>

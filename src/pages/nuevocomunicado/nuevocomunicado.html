@@ -1,0 +1,31 @@
+<!--
+  Generated template for the NuevocomunicadoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DETALLES DEL COMUNICADO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        
+          <ion-item>
+            <ion-label floating>TITULO</ion-label>
+            <ion-input type="text" [(ngModel)]="comunicado.titulo"></ion-input>
+          </ion-item>        
+          <ion-item>
+            <ion-label floating>COMUNICADO</ion-label>
+            <ion-textarea [(ngModel)]="comunicado.texto"></ion-textarea>
+          </ion-item>        
+        </ion-list>
+
+        <button ion-button full (click)="guardarcomunicado()">Publicar</button>
+
+</ion-content>

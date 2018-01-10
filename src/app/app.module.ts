@@ -6,25 +6,64 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { TableroPage } from '../pages/tablero/tablero';
+import { EstadocuentasPage } from '../pages/estadocuentas/estadocuentas';
+import { MensajesPage } from '../pages/mensajes/mensajes';
+import { PanicoPage } from '../pages/panico/panico';
+import { ComunicadoPage } from '../pages/comunicado/comunicado';
+import { ComunicadosService } from '../services/comunicados.service';
+import { NuevocomunicadoPage } from '../pages/nuevocomunicado/nuevocomunicado';
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule, AngularFireAuth} from 'angularfire2/auth';
+import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
+
+export const configFirebase = {
+  apiKey: "AIzaSyChcr_NnTUwWCVXnuYhzD_7X8l6oXX7MF8",
+  authDomain: "ionicchat-df8cd.firebaseapp.com",
+  databaseURL: "https://ionicchat-df8cd.firebaseio.com",
+  projectId: "ionic-chat-77c25",
+  storageBucket: "ionicchat-df8cd.appspot.com",
+  messagingSenderId: '482878141920'
+};
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    TableroPage,
+    EstadocuentasPage,
+    MensajesPage,
+    PanicoPage,
+    ComunicadoPage,
+    NuevocomunicadoPage    
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(configFirebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    TableroPage,
+    EstadocuentasPage,
+    MensajesPage,
+    PanicoPage,
+    ComunicadoPage,
+    NuevocomunicadoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ComunicadosService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireDatabase,
+    AngularFireAuth
   ]
 })
 export class AppModule {}
