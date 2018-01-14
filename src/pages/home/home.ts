@@ -4,6 +4,7 @@ import { TableroPage } from '../tablero/tablero';
 import { EstadocuentasPage } from '../estadocuentas/estadocuentas';
 import { MensajesPage } from '../mensajes/mensajes';
 import { PanicoPage } from '../panico/panico';
+import { MisdatosPage } from '../misdatos/misdatos';
 
 @Component({
   selector: 'page-home',
@@ -26,6 +27,9 @@ export class HomePage {
   }
   public gotopanico(){
     this.navCtrl.push(PanicoPage);
+  }
+  public gotomisdatos(){
+    this.navCtrl.push(MisdatosPage);
   }
 
 

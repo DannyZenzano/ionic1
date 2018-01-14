@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ComunicadosService } from '../../services/comunicados.service';
 
 /**
  * Generated class for the EstadocuentasPage page.
@@ -14,8 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'estadocuentas.html',
 })
 export class EstadocuentasPage {
+  estadocuentas={id:null, estado:null, monto:null, fechalimitepago:null};
+  usuario={id:null, nombre:null, casa:null, telefono:null};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public comunicadoservicio:ComunicadosService) {
+    var myid=comunicadoservicio.getmyid();
+    this.estadocuentas = comunicadoservicio.getestadocuentas(myid);
+    this.usuario = comunicadoservicio.getusuario(myid);
   }
 
   ionViewDidLoad() {

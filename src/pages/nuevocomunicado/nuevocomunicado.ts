@@ -35,9 +35,12 @@ export class NuevocomunicadoPage {
       this.navCtrl.pop();
 
     }else{
+
         this.comunicado.id=Date.now();
-        this.comunicado.autor="ESTATICO";
-        this.comunicado.fecha="2017/01/01 12:12:12";
+        this.comunicado.autor=this.comunicadosService.getmyid();
+        var hoy=new Date();
+        var mes= hoy.getMonth()+1;
+        this.comunicado.fecha=hoy.getFullYear()+"-"+mes+"-"+hoy.getDate()+" "+hoy.getHours()+":"+hoy.getMinutes()+":"+hoy.getSeconds();
         this.comunicadosService.crearcomunicado(this.comunicado);   
         alert('Comunicado publicado exitosamente!');
         this.navCtrl.pop();

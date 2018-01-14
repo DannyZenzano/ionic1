@@ -15,4 +15,37 @@
 
 <ion-content padding>
 
+
+    
+        <ion-content id="side-menu21">
+            <ion-list>
+                <ion-card *ngFor="let mensaje of mensajes">
+                    <ion-card-header>
+                        {{ mensaje.nombre}}({{ mensaje.fecha}}):
+                    </ion-card-header>
+                    <ion-card-content>
+                        {{ mensaje.texto}}
+                    </ion-card-content>
+                </ion-card>
+
+                 
+            </ion-list>
+            <ion-footer>
+                <ion-toolbar position="bottom">
+                  <ion-input  placeholder="Type a message" [(ngModel)]="campotexto"></ion-input>
+                  <ion-buttons end>
+                    <button ion-button icon-only  (click)="guardarmensaje()">
+                      <ion-icon name="send"></ion-icon>
+                    </button>                    
+                  </ion-buttons>
+                </ion-toolbar>
+              </ion-footer>
+        </ion-content>
+   
+
+
+
+
+
+
 </ion-content>

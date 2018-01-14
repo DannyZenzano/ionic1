@@ -13,7 +13,9 @@ import { PanicoPage } from '../pages/panico/panico';
 import { ComunicadoPage } from '../pages/comunicado/comunicado';
 import { ComunicadosService } from '../services/comunicados.service';
 import { NuevocomunicadoPage } from '../pages/nuevocomunicado/nuevocomunicado';
+import { MisdatosPage } from '../pages/misdatos/misdatos';
 
+/*
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule, AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
@@ -26,7 +28,7 @@ export const configFirebase = {
   storageBucket: "ionicchat-df8cd.appspot.com",
   messagingSenderId: '482878141920'
 };
-
+*/
 @NgModule({
   declarations: [
     MyApp,
@@ -36,14 +38,15 @@ export const configFirebase = {
     MensajesPage,
     PanicoPage,
     ComunicadoPage,
-    NuevocomunicadoPage    
+    NuevocomunicadoPage,
+    MisdatosPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(configFirebase),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule
+    //AngularFireModule.initializeApp(configFirebase),
+    //AngularFireDatabaseModule,
+    //AngularFireAuthModule
     
   ],
   bootstrap: [IonicApp],
@@ -55,15 +58,16 @@ export const configFirebase = {
     MensajesPage,
     PanicoPage,
     ComunicadoPage,
-    NuevocomunicadoPage
+    NuevocomunicadoPage,
+    MisdatosPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     ComunicadosService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AngularFireDatabase,
-    AngularFireAuth
+    //AngularFireDatabase,
+    //AngularFireAuth
   ]
 })
 export class AppModule {}
